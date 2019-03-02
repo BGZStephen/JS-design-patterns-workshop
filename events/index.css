@@ -12,27 +12,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
   width: 33.333%;
   height: 50px;
-  transition: 0.3s ease opacity;
-  color: white;
-}
-
-.notification-left.active,
-.notification-middle.active,
-.notification-right.active {
-  opacity: 1;
+  transition: 0.3s ease all;;
+  background-color: white;
 }
 
 .notification-left {
-  background: red;
+  color: red;
+  border: 2px solid red;
+}
+
+.notification-left.active {
+  background-color: red;
+  color: white;
 }
 
 .notification-middle {
-  background: blue;
+  color: blue;
+  border: 2px solid blue;
+}
+
+.notification-middle.active {
+  background-color: blue;
+  color: white;
 }
 
 .notification-right {
-  background: green;
+  color: green;
+  border: 2px solid green;
+}
+
+.notification-right.active {
+  background-color: green;
+  color: white;
 }
