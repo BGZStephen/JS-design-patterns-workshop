@@ -1,0 +1,54 @@
+$selectors: (
+	default,
+	primary,
+	secondary,
+	success,
+	danger,
+	warning,
+	info
+);
+
+$background-colors-list: (
+	$brand-white,
+	#0062cc,
+	#eeeeee,
+	#28a745,
+	#dc3545,
+	#ffc107,
+	#17a2b8
+);
+$colors-list: (
+	black,
+	$brand-white,
+	black,
+	$brand-white,
+	$brand-white,
+	$brand-white,
+	$brand-white
+);
+
+.container {
+	padding: 20px;
+	position: relative;
+  width: 100vw;
+
+	@media (min-width: $screen-md) {
+		width: 100%;
+  }
+  
+  &.full-height {
+    height: 100%;
+  }
+
+  &.no-padding {
+    padding: 0;
+  }
+}
+
+@each $selector in $selectors {
+	$i: index($selectors, $selector);
+	.container-#{$selector} {
+		background-color: nth($background-colors-list, $i);
+		color: nth($colors-list, $i);
+	}
+}

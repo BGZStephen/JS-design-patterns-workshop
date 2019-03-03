@@ -1,0 +1,98 @@
+@import '../../styles/variables/index';
+
+.notification-service {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: 0.3s ease all;
+  z-index: 100;
+  pointer-events: none;
+
+  display: flex;
+
+	&.success {
+		background: $brand-green;
+		color: white;
+	}
+
+	&.danger {
+		background: $brand-red;
+		color: white;
+	}
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.333%;
+  height: 50px;
+  transition: 0.3s ease all;;
+  background-color: white;
+
+  &.left {
+
+  }
+
+  &.middle {
+
+  }
+
+  &.right {
+
+  }
+
+  &:not(.visible) {
+    opacity: 0;
+  }
+
+  &.visible {
+    opacity: 1;
+  }
+
+  &.success {
+		background: $brand-green;
+		color: white;
+  }
+  
+  &.info {
+    background: $brand-blue;
+		color: white;
+  }
+
+	&.danger {
+		background: $brand-red;
+		color: white;
+	}
+}
+
+.notification-left {
+  color: red;
+  border: 2px solid red;
+}
+
+.notification-left.active {
+  background-color: red;
+  color: white;
+}
+
+.notification-middle {
+  color: blue;
+  border: 2px solid blue;
+}
+
+.notification-middle.active {
+  background-color: blue;
+  color: white;
+}
+
+.notification-right {
+  color: green;
+  border: 2px solid green;
+}
+
+.notification-right.active {
+  background-color: green;
+  color: white;
+}

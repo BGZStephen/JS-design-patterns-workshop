@@ -1,0 +1,100 @@
+form {
+
+  .form-group-header {
+    margin-bottom: 15px;
+    p {
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
+  .form-group-seperator {
+    border-top: 1px solid #EEE;
+    margin: 15px 0;
+  }
+
+  .input-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $brand-blue;
+  }
+
+	.input-group {
+		margin-bottom: 20px;
+		display: flex;
+		flex-direction: column;
+
+		.input-error-text {
+			font-size: 0.8em;
+			margin-top: 8px;
+			color: $danger;
+		}
+
+		input,
+		textarea,
+		select {
+			background: white;
+			border: 1px solid #dddddd;
+			border-radius: 5px;
+      padding: 8px 12px;
+      width: 100%;
+
+			&:active,
+			&:focus {
+				border: 1px solid $brand-blue;
+				box-shadow: 1px 1px 3px rgba($brand-blue, 0.5), -1px 1px 3px rgba($brand-blue, 0.5),
+					-1px -1px 3px rgba($brand-blue, 0.5), 1px -1px 3px rgba($brand-blue, 0.5);
+			}
+		}
+    
+		input[type='text'] {
+			display: block;
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+    }
+    
+    &.input-group-inline {
+      flex-direction: row;
+      align-items: center;
+    }
+
+		.radio-input,
+		.checkbox-input {
+			display: flex;
+      align-items: center;
+
+			> input {
+        width: auto;
+        margin-right: 10px;
+				background: white;
+			}
+		}
+
+		&.has-error {
+			label {
+				color: $danger;
+			}
+      input[type='text'],
+      input[type='email'],
+			input[type='password'],
+			textarea,
+			select {
+				box-shadow: 1px 1px 3px rgba($danger, 0.5),
+					-1px 1px 3px rgba($danger, 0.5), -1px -1px 3px rgba($danger, 0.5),
+					1px -1px 3px rgba($danger, 0.5);
+
+				&:active,
+				&:focus {
+					border: 1px solid $danger;
+					box-shadow: 1px 1px 3px rgba($danger, 0.5),
+						-1px 1px 3px rgba($danger, 0.5), -1px -1px 3px rgba($danger, 0.5),
+						1px -1px 3px rgba($danger, 0.5);
+				}
+			}
+		}
+	}
+}

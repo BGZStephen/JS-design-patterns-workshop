@@ -1,0 +1,48 @@
+$color-selectors-list: (
+	default,
+	primary,
+	secondary,
+	success,
+	danger,
+	warning,
+	info
+);
+$background-colors-list: (
+	$brand-white,
+	$primary,
+	$brand-white,
+	$success,
+	$danger,
+	$warning,
+	$info
+);
+$colors-list: (
+	black,
+	$brand-white,
+	black,
+	$brand-white,
+	$brand-white,
+	$brand-white,
+	$brand-white
+);
+
+.icons-page {
+	.icon-label {
+		font-size: 0.6em;
+		font-weight: bolder;
+		padding: 1px 4px;
+	}
+
+	i {
+		text-align: center;
+		width: 30px;
+	}
+
+	@for $i from 1 through length($color-selectors-list) {
+		.icon-label-#{nth($color-selectors-list, $i)} {
+			background-color: nth($background-colors-list, $i);
+			border-bottom-color: darken(nth($background-colors-list, $i), 5%);
+			color: nth($colors-list, $i);
+		}
+	}
+}
