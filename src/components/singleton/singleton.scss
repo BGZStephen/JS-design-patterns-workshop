@@ -1,0 +1,17 @@
+.singleton-view {
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .row {
+    margin: 15px 0;
+
+    &:last-of-type {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+  }
+}

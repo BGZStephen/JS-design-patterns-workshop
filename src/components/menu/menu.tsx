@@ -37,6 +37,12 @@ class DashboardMenu extends React.Component<Props, DashboardMenuState> {
         icon: 'fas fa-calendar-day fa-fw',
         link: '/events',
       },
+      {
+        id: 'singletons',
+        label: 'Events',
+        icon: 'fas fa-calendar-day fa-fw',
+        link: '/singleton',
+      },
     ];
 
     const menuItemHeight = window.innerWidth > 968 ? 50 : 35;
