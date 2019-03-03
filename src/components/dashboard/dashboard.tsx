@@ -5,6 +5,7 @@ import DashboardMenu from '../menu/menu';
 import './dashboard.scss'
 import Events from '../events/events';
 import Singleton from '../singleton/singleton';
+import Observable from '../observable/observable';
 
 class Dashboard extends React.Component<RouteComponentProps<{}>> {
   render() {
@@ -17,6 +18,7 @@ class Dashboard extends React.Component<RouteComponentProps<{}>> {
           <Switch>
             <Route path="/events" component={Events} />
             <Route path="/singleton" component={Singleton} />
+            <Route path="/observable" component={Observable} />
           </Switch>
         </div>
       </div>

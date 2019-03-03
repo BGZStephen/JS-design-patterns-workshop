@@ -38,10 +38,16 @@ class DashboardMenu extends React.Component<Props, DashboardMenuState> {
         link: '/events',
       },
       {
-        id: 'singletons',
+        id: 'singleton',
         label: 'Singleton',
         icon: 'fas fa-fingerprint fa-fw',
         link: '/singleton',
+      },
+      {
+        id: 'observable',
+        label: 'Observable',
+        icon: 'fas fa-eye fa-fw',
+        link: '/observable',
       },
     ];
 
