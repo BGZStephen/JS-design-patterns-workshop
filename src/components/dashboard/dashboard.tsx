@@ -7,6 +7,7 @@ import Events from '../events/events';
 import Singleton from '../singleton/singleton';
 import Observable from '../observable/observable';
 import Factory from '../factory/view';
+import AbstractFactory from '../abstract-factory/view';
 
 class Dashboard extends React.Component<RouteComponentProps<{}>> {
   render() {
@@ -21,6 +22,7 @@ class Dashboard extends React.Component<RouteComponentProps<{}>> {
             <Route path="/singleton" component={Singleton} />
             <Route path="/observable" component={Observable} />
             <Route path="/factory" component={Factory} />
+            <Route path="/abstract-factory" component={AbstractFactory} />
           </Switch>
         </div>
       </div>
