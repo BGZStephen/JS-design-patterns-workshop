@@ -2,12 +2,16 @@
   .row {
     margin: 0 0 15px 0;
 
-    &:first-of-type {
-      margin-top: 0;
-    }
-
     &:last-of-type {
       margin-bottom: 0;
+    }
+  }
+
+  .panel {
+    .row {
+      &:first-of-type {
+        margin-top: 0;
+      }
     }
   }
 }
