@@ -15,7 +15,7 @@ export class WeaponFactory {
       {type: "Sword", value: 5},
       {type: "Greataxe", value: 15},
       {type: "Bow", value: 8},
-      {type: "Crossbow", value: 12},
+      {type: "Staff", value: 12},
     ];
 
     this.multipliers = [
@@ -86,7 +86,7 @@ export interface IWeaponStats {
   maxDamage: number;
 }
 
-export default class Weapon {
+export class Weapon {
   private name: string;
   private type: string;
   private level: number;

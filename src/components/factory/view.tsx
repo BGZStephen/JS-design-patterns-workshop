@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Weapon, { WeaponFactory } from './weapon-factory';
+import { Weapon, WeaponFactory } from './weapon-factory';
 
 import './view.scss'
 
@@ -19,7 +19,7 @@ class Factory extends React.Component<Props, State> {
       "Sword",
       "Greataxe",
       "Bow",
-      "Crossbow",
+      "Staff",
     ];
 
     this.state = {

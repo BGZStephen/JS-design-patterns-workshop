@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { CharacterFactory } from './character-factory';
-import Weapon, { WeaponFactory } from '../factory/weapon-factory';
+import { Weapon, WeaponFactory } from '../factory/weapon-factory';
 
 import './view.scss'
+import { getClassTypes, getRaces, getClassLimitations } from './wow-helpers';
 
 interface Props {}
 
@@ -19,76 +20,9 @@ class AbstractFactory extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
     
-    const classTypes = [
-      "Warrior",
-      "Rogue",
-      "Paladin",
-      "Druid",
-      "Shaman",
-      "Priest",
-      "Death Knight",
-      "Demon Hunter",
-      "Hunter",
-      "Mage",
-      "Warlock",
-      "Monk",
-    ];
-
-    const races = [
-      "Dwarf",
-      "Human",
-      "Gnome",
-      "Night Elf",
-      "Tauren",
-      "Orc",
-      "Undead",
-      "Troll",
-      "Panderaan",
-      "Draenei"
-    ]
-
-    const classLimitations = [
-      {
-        race: "Human",
-        classes: ["Warrior", "Rogue", "Paladin", "Priest", "Death Knight", "Hunter", "Mage", "Warlock", "Monk"]
-      },
-      {
-        race: "Dwarf",
-        classes: ["Warrior", "Rogue", "Paladin", "Shaman", "Priest", "Death Knight", "Hunter", "Mage", "Monk"]
-      },
-      {
-        race: "Gnome",
-        classes: ["Warrior", "Rogue", "Priest", "Death Knight", "Hunter", "Mage", "Warlock", "Monk"]
-      },
-      {
-        race: "Night Elf",
-        classes: ["Warrior", "Rogue", "Priest", "Death Knight", "Hunter", "Mage", "Monk"]
-      },
-      {
-        race: "Tauren",
-        classes: ["Warrior", "Rogue", "Paladin", "Priest", "Death Knight", "Hunter", "Monk"]
-      },
-      {
-        race: "Orc",
-        classes: ["Warrior", "Rogue", "Shaman", "Priest", "Death Knight", "Hunter", "Warlock", "Monk"]
-      },
-      {
-        race: "undead",
-        classes: ["Warrior", "Rogue", "Priest", "Death Knight", "Hunter", "Mage", "Warlock", "Monk"]
-      },
-      {
-        race: "Troll",
-        classes: ["Warrior", "Rogue", "Shaman", "Priest", "Death Knight", "Hunter", "Warlock", "Monk"]
-      },
-      {
-        race: "Panderaan",
-        classes: ["Warrior", "Rogue", "Priest", "Death Knight", "Hunter", "Mage", "Warlock", "Monk"]
-      },
-      {
-        race: "Draenei",
-        classes: ["Warrior", "Rogue", "Paladin", "Priest", "Death Knight", "Mage", "Warlock", "Hunter", "Monk"]
-      }
-    ]
+    const classTypes = getClassTypes();
+    const races = getRaces();
+    const classLimitations = getClassLimitations();
 
     this.state = {
       race: races[0],
@@ -155,10 +89,23 @@ class AbstractFactory extends React.Component<Props, State> {
                 <div className="panel-heading">
                   <strong>Starting Armor</strong>
                 </div>
+                <div className="panel-body">
+                  <p><strong>Name</strong>: {character.armor.getStats().name}</p>
+                  <p><strong>Rarity</strong>: {character.armor.getStats().rarity}</p>
+                  <p><strong>Level</strong>: {character.armor.getStats().level}</p>
+                  <p><strong>Armor Value</strong>: {character.armor.getStats().armorValue}</p>
+                </div>
               </div>
               <div className="panel panel-primary">
                 <div className="panel-heading">
                   <strong>Starting Weapon</strong>
+                </div>
+                <div className="panel-body">
+                  <p><strong>Name</strong>: {character.weapon.getStats().name}</p>
+                  <p><strong>Rarity</strong>: {character.weapon.getStats().rarity}</p>
+                  <p><strong>Level</strong>: {character.weapon.getStats().level}</p>
+                  <p><strong>Min Damage</strong>: {character.weapon.getStats().minDamage}</p>
+                  <p><strong>Max Damage</strong>: {character.weapon.getStats().maxDamage}</p>
                 </div>
               </div>
             </div>
@@ -177,8 +124,6 @@ class AbstractFactory extends React.Component<Props, State> {
   private generateCharacter = () => {
     this.setState({
       character: new CharacterFactory(this.state.race, this.state.classType).getCharacter(),
-    }, () => {
-      console.log(this.state.character)
     })
   }
 }
