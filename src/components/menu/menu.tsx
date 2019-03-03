@@ -49,6 +49,18 @@ class DashboardMenu extends React.Component<Props, DashboardMenuState> {
         icon: 'fas fa-eye fa-fw',
         link: '/observable',
       },
+      {
+        id: 'factory',
+        label: 'Factory',
+        icon: 'fas fa-cube fa-fw',
+        link: '/factory',
+      },
+      {
+        id: 'abstract-factory',
+        label: 'Abstract Factory',
+        icon: 'fas fa-cubes fa-fw',
+        link: '/abstract-factory',
+      },
     ];
 
     const menuItemHeight = window.innerWidth > 968 ? 50 : 35;

@@ -6,6 +6,7 @@ import './dashboard.scss'
 import Events from '../events/events';
 import Singleton from '../singleton/singleton';
 import Observable from '../observable/observable';
+import Factory from '../factory/view';
 
 class Dashboard extends React.Component<RouteComponentProps<{}>> {
   render() {
@@ -19,6 +20,7 @@ class Dashboard extends React.Component<RouteComponentProps<{}>> {
             <Route path="/events" component={Events} />
             <Route path="/singleton" component={Singleton} />
             <Route path="/observable" component={Observable} />
+            <Route path="/factory" component={Factory} />
           </Switch>
         </div>
       </div>
