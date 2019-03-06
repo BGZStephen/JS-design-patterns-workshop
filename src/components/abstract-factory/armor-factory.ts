@@ -38,16 +38,6 @@ export class ArmorFactory {
     this.setArmorName();
   }
 
-  getArmor(): Armor {
-    return new Armor(
-      this.name,
-      this.type,
-      this.level,
-      this.rarity,
-      this.armorValue,
-    )
-  }
-
   setArmorRarity() {
     const rarities = [
       "Basic",
@@ -72,6 +62,16 @@ export class ArmorFactory {
     const armorMinimumMultiplier = this.multipliers.find(multiplier => multiplier.rarity === this.rarity).value
 
     this.armorValue = Math.floor(Math.random() * (armorMinimum * armorMinimumMultiplier) + 1 + (this.level * 2));
+  }
+
+  getArmor(): Armor {
+    return new Armor(
+      this.name,
+      this.type,
+      this.level,
+      this.rarity,
+      this.armorValue,
+    )
   }
 }
 

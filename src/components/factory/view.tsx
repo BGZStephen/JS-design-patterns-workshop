@@ -29,6 +29,12 @@ class Factory extends React.Component<Props, State> {
     }
   }
 
+  private generateWeapon = () => {
+    this.setState({
+      weapon: new WeaponFactory(this.state.weaponType).getWeapon(),
+    })
+  }
+
   render() {
     const { weapon, weaponTypes } = this.state;
     return (
@@ -83,12 +89,6 @@ class Factory extends React.Component<Props, State> {
         </div>
       </div>
     );
-  }
-
-  private generateWeapon = () => {
-    this.setState({
-      weapon: new WeaponFactory(this.state.weaponType).getWeapon(),
-    })
   }
 }
 

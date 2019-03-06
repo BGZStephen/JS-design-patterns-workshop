@@ -34,7 +34,19 @@ class AbstractFactory extends React.Component<Props, State> {
     }
   }
 
-  render() {
+  private getAvailableClassList = () => {
+    const { classLimitations, race } = this.state;
+    const availableClasses = classLimitations.find(classLimitation => classLimitation.race === race).classes;
+    return availableClasses;
+  }
+
+  private generateCharacter = () => {
+    this.setState({
+      character: new CharacterFactory(this.state.race, this.state.classType).getCharacter(),
+    })
+  }
+
+  public render() {
     const { races, character } = this.state;
     return (
       <div className="container full-height factory-view">
@@ -113,18 +125,6 @@ class AbstractFactory extends React.Component<Props, State> {
         </div>
       </div>
     );
-  }
-
-  private getAvailableClassList = () => {
-    const { classLimitations, race } = this.state;
-    const availableClasses = classLimitations.find(classLimitation => classLimitation.race === race).classes;
-    return availableClasses;
-  }
-
-  private generateCharacter = () => {
-    this.setState({
-      character: new CharacterFactory(this.state.race, this.state.classType).getCharacter(),
-    })
   }
 }
 

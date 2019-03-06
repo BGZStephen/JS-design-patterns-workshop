@@ -1,5 +1,4 @@
 export function getStartingWeapon(classType: string): string {
-  console.log(classType)
   const weaponMappings = [
     {class: "Warrior", weapon: "Greataxe"},
     {class: "Rogue", weapon: "Sword"},

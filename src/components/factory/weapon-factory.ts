@@ -1,3 +1,12 @@
+export interface IWeaponStats {
+  name: string;
+  type: string;
+  level: number;
+  rarity: string;
+  minDamage: number;
+  maxDamage: number;
+}
+
 export class WeaponFactory {
   private type: string;
   private name: string;
@@ -32,17 +41,6 @@ export class WeaponFactory {
     this.setWeaponName();
   }
 
-  getWeapon(): Weapon {
-    return new Weapon(
-      this.name,
-      this.type,
-      this.level,
-      this.rarity,
-      this.minDamage,
-      this.maxDamage,
-    )
-  }
-
   setWeaponRarity() {
     const rarities = [
       "Basic",
@@ -75,15 +73,17 @@ export class WeaponFactory {
 
     this.maxDamage = Math.floor(Math.random() * (weaponMaximum * weaponMaximumMultiplier)) + this.minDamage + (this.level * 2);
   }
-}
 
-export interface IWeaponStats {
-  name: string;
-  type: string;
-  level: number;
-  rarity: string;
-  minDamage: number;
-  maxDamage: number;
+  getWeapon(): Weapon {
+    return new Weapon(
+      this.name,
+      this.type,
+      this.level,
+      this.rarity,
+      this.minDamage,
+      this.maxDamage,
+    )
+  }
 }
 
 export class Weapon {
