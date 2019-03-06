@@ -23,6 +23,10 @@ export class Notification extends React.Component<Props, NotificationState> {
       delay: 1000,
     };
 
+    this.setupEventListeners();
+  }
+
+  private setupEventListeners() {
     NotificationService.on('show-left', () => {
       this.setState({
         leftVisible: true,
